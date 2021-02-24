@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="images/Y.png">
+		<title>Titanic - Machine Learning from Disaster</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Titanic - Machine Learning from Disaster</h1>
+						<a href="resume/starting-with-titanic-dataset.ipynb" target="_blank" class="button">Python Notebook tutorial</a>
+						<a href="resume/starting-with-titanic-dataset-2.ipynb" target="_blank" class="button">Python Notebook Improvised</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- Text -->
+									<section>
+										<h2>First Experience with Kaggle</h2>
+										<h5>Competition :- Titanic - Machine Learning from Disaster</h5>
+										<p>As a beginner to kaggle the <strong>Alexis Cook's Titanic Tutorial</strong> helped me in understanding how kaggle works and also helped me with my first Submission</p>
+
+										<h4><strong>Initial Submission with the help of tutorial</strong></h4>
+
+										<p>1. We start with reading the input files that is the training data file and test data file</p>
+										<span class="image"><img src="images/train_data.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/train_data_head.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/test_data.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/test_data_head.PNG" alt="" /><br></span>
+										<p>2. Calulating the percentage of women and men who survived</p>
+										<span class="image"><img src="images/women_percentage.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/men_percentage.PNG" alt="" /><br></span>
+										<p>3. We use RandomForestClassifier to predict the data</p>
+										<span class="image"><img src="images/model.PNG" alt="" /><br></span>
+										<p>This submission gave me a score of 0.77511</p>
+										<span class="image"><img src="images/initial_rank.PNG" alt="" /><br></span>
+
+										<h4><strong>Contribution/Improvisation</strong></h4>
+										<p>1. Read the data</p>	
+										<span class="image"><img src="images/train_data.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/train_data_head.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/test_data.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/test_data_head.PNG" alt="" /><br></span>
+
+										<p>2. Visualise the data to get more insight on the data</p>
+										<p>a. Plotting Survived over number of people we see that the number of people dead is more than the number of people survived.</p>
+										<span class="image"><img src="images/survivers.PNG" alt="" /><br></span>
+										<p>b. Survived by class.We can see that 65% of class 1 people survived and 48% class 2 people survived and 25% class 3 people have survived</p>
+										<span class="image"><img src="images/survivedbypclass.PNG" alt="" /><br></span>
+										<p>c. Survived by Salutation.</p>
+										<span class="image"><img src="images/salutation_survived.PNG" alt="" /><br></span>
+										<p>d. Survived by Age. We can see that people in the Age range 15-40 have the highest survival rate. Even the deaths are highest in that range</p>
+										<span class="image"><img src="images/survival_by_age.PNG" alt="" /><br></span>
+										<p>d. Survived by Embarked.</p>
+										<span class="image"><img src="images/survived_by_embarked.PNG" alt="" /><br></span>
+
+										<p>3. Cleaning the data. Dealing with missing values in Training Data</p>
+
+										<p> a. View the data shape and description</p>
+										<span class="image"><img src="images/train_data_shape.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/train_data_describe.PNG" alt="" /><br></span>
+										<p> b. Search for null values in the Dataset from the below representation we can see that Age, Cabin and Embarked have null values</p>
+										<span class="image"><img src="images/train_data_isnull.PNG" alt="" /><br></span>
+										<p> c. We find the Median of Age column and fill the null values with the Median</p>
+										<span class="image"><img src="images/train_fill.PNG" alt="" /><br></span>
+										<p> d. For missing values in Embarked we find the place where most number of people embarked and assign that place to the missing values</p>
+										<span class="image"><img src="images/embarked_fill.PNG" alt="" /><br></span>
+										<p> e. Dropping the cabin values cause I believe they dont have much importance</p>
+										<span class="image"><img src="images/drop_cabin.PNG" alt="" /><br></span>
+										<p> f. No more null values in Training data</p>
+										<span class="image"><img src="images/null_after_cleaning.PNG" alt="" /><br></span>
+										<p> g. Converting the string data in sex column to numerical data so we can use it for comparison</p>
+										<span class="image"><img src="images/label_encoder.PNG" alt="" /><br></span>
+										<p> h. Features to compare</p>
+										<span class="image"><img src="images/features.PNG" alt="" /><br></span>
+										<p> i. Checking which model gives the most accurate output from the output we can see that Gradient Boosting Classifier has the most accuracy</p>
+										<span class="image"><img src="images/accuracy.PNG" alt="" /><br></span>
+										<span class="image"><img src="images/accuracy_output.PNG" alt="" /><br></span>
+
+										<p>4. Cleaning the data. Dealing with missing values in Test Data</p>
+										<p>a. Null values in Test data. Age, Fare and Cabin have null values in the test dataset</p>
+										<span class="image"><img src="images/test_data_null.PNG" alt="" /><br></span>
+										<p>b. Missing values in Age is filled with its median values </p>
+										<span class="image"><img src="images/test_data_age.PNG" alt="" /><br></span><br>
+										<p>c. Missing values in Fare is filled with its median values </p>
+										<span class="image"><img src="images/test_data_fare_median.PNG" alt="" /><br></span><br>
+										<p>d. Converting the string data in sex column to numerical data so we can use it for comparison</p>
+										<span class="image"><img src="images/test_data_transform.PNG" alt="" /><br></span>
+										<p>e. Applying the GradientBoostingClassifier to predict the values. This model has the highest accuracy score</p>
+										<span class="image"><img src="images/submission final.PNG" alt="" /><br></span>
+										<p>f. This Submission gave me a Score of 0.76555</p>
+										<span class="image"><img src="images/score.PNG" alt="" /><br></span>
+										
+									</section>
+
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">	
+					<section>
+						<h2>Get in touch</h2>
+						<dl class="alt">
+							<dt>Address</dt>
+							<dd>404 E Border st &bull; Arlington, TX 76010 &bull; USA</dd>
+							<dt>Phone</dt>
+							<dd>(682) 347-3446</dd>
+							<dt>Email</dt>
+							<dd><a href="#">yashjana@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://twitter.com/Yashwanthkj" target="_blank" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/yaswanth-jk-4008bb162/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Yaswanth3277" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/yaswanthjk" target="_blank" class="icon brands fa-kaggle alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
