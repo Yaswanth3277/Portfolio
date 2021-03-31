@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="images/Y.png">
+		<title>CIFAR-10 Image Classifier</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>CIFAR - 10 Image Classifier</h1>
+						<a href="https://github.com/Yaswanth3277/cifar10imageclassifier" target="_blank" class="button">Python Notebook</a>
+						<a href="https://github.com/Yaswanth3277/cifar10imageclassifier/blob/main/Image_Classifier.ipynb" target="_blank" class="button">Most accurate model</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- Text -->
+									<section>
+										<h2><strong>CIFAR - 10 Image Classifier</strong></h2>
+										<h4><a href="https://github.com/Yaswanth3277/cifar10imageclassifier" target="_blank">Github</a></h4>
+                                        <h4><strong>Introduction</strong></h4>
+                                        <p>The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
+
+                                            The dataset is divided into five training batches and one test batch, each with 10000 images. The test batch contains exactly 1000 randomly-selected images from each class. The training batches contain the remaining images in random order, but some training batches may contain more images from one class than another. Between them, the training batches contain exactly 5000 images from each class.</p>
+										<p>In this blog we will use PyTorch to construct a convolutional neural network. We will then train the CNN on the CIFAR-10 data set to be able to classify images from the CIFAR-10 testing set into the ten categories present in the data set.</p>
+										
+										<h4><strong>Image Classifier with 75% accuracy(Best accuracy obtained)</strong></h4>
+										<ul style="list-style-type: none;">
+											<li>Changes made:</li>
+											<ul>
+												<li>Changed the epoch value to 10.</li>
+												<li>Added 1 convolutional layer so there are 3 convolutional layers in total.</li>
+												<li>Added 1 fully connected layer so that is 3 fully connected layers in total.</li>
+												<li>convolutional layer values are (3, 64, 3), (64, 128, 3), (128, 256, 3).</li>
+												<li>First fully connected layer input values updated to 64*4*4.</li>
+											</ul>
+											<li>Install this to show runtime</li>
+											<li> $ pip install ipython-autotime</li><br>
+                                            <li>i. Import libraries and initializing runtime.</li>
+                                            <li><span class="image"><img src="images/cifar10/Import.PNG" alt="" /></span></li>
+                                            <li>ii. Load train and test dataset using torch and torchvision.</li>
+                                            <li><span class="image"><img src="images/cifar10/initialize_dataset.PNG" alt="" /></span></li>
+                                            <li>iii. Sample training images output.</li>
+                                            <li><span class="image"><img src="images/cifar10/sample_image.PNG" alt="" /></span></li>
+                                            <li>iv. Define a neural network with 3 convolutional layer and a max pool of 2x2 dimension and 4 fully connected layers which adds more depth to the network and helps in increasing the model accuracy</li>
+                                            <li><span class="image"><img src="images/cifar10/network_layer_imp1.PNG" alt="" /></span></li>
+                                            <li>v. Defining loss function and optimizer. Using Classification class entropy loss function is used to adjust model weights during training and SGD optimizer with momentum</li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_sgd.PNG" alt="" /></span></li>
+                                            <li>vi. We train the network with the data and epoch 10 to get reduce the loss value as much as possible.</li>
+                                            <li><span class="image"><img src="images/cifar10/lossrun_imp11.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_imp12.PNG" alt="" /></span></li>
+                                            <li>vii. Save the training model.</li>
+                                            <li><span class="image"><img src="images/cifar10/torchsave.PNG" alt="" /></span></li>
+                                            <li>viii. Test the network on the test data</li><br>
+                                            <li>We have trained the network for 2 passes over the training dataset. But we need to check if the network has learnt anything at all.
+
+                                                We will check this by predicting the class label that the neural network outputs, and checking it against the ground-truth. If the prediction is correct.</li>
+                                            <li><span class="image"><img src="images/cifar10/ground_truth.PNG" alt="" /></span></li>
+                                            <li>ix. Loading back the saved model and testing the outputs</li>
+                                            <li><span class="image"><img src="images/cifar10/load_net.PNG" alt="" /></span></li>
+                                            <li><span class="image"><img src="images/cifar10/output_images.PNG" alt="" /></span></li>
+                                            <li>x. The outputs are energies for the 10 classes. The higher the energy for a class, the more the network thinks that the image is of the particular class. So, we get the index of highest energy</li>
+                                            <li><span class="image"><img src="images/cifar10/predicted.PNG" alt="" /></span></li>
+                                            <li>xi. Network accuracy for the whole dataset on the 10000 test images.</li>
+                                            <li><span class="image"><img src="images/cifar10/network_accuracy_imp1.PNG" alt="" /></span></li>
+                                            <li>xii. Checking which classes performed well.</li>
+                                            <li><span class="image"><img src="images/cifar10/class_accuracy_imp1.PNG" alt="" /></span></li>
+                                            <li>Network accuracy obtained after making the above changes with SGD optimizer <strong>75%</strong></li>
+                                        </ul>
+
+										<h3><strong>Experiments</strong></h3>
+										<h4><strong>1. Trying different Optimizers</strong></h4>
+
+                                        <ul style="list-style-type: none;">
+                                            <li><strong>1. SGD</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_sgd.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy.PNG" alt="" /></span></li>
+											<li>SGD at epoch 2 the loss function run time was 1min 58sec and gave an accuracy of <strong>55%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>2. Adagrad</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_adagrad.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_adagrad.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_adagrad.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_adagrad.PNG" alt="" /></span></li>
+											<li>Adagrad at epoch 2 the loss function run time was 2min 2sec and gave an accuracy of <strong>35%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>3. Adam</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_adam.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_adam.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_adam.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_adam.PNG" alt="" /></span></li>
+											<li>Adam at epoch 2 the loss function run time was 2min 19sec and gave an accuracy of  <strong>54%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>4. Adamax</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_adamax.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_adamax.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_adamax.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_adamax.PNG" alt="" /></span></li>
+											<li>Adamax at epoch 2 the loss function run time was 2min 28sec and gave an accuracy of  <strong>52%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>5. ASGD</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_ASGD.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_ASGD.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_ASGD.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_ASGD.PNG" alt="" /></span></li>
+											<li>ASGD at epoch 2 the loss function run time was 1min 59sec and gave an accuracy of  <strong>34%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>6. LBFGS</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_LBFGS.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_LBFGS.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_LBFGS.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_LBFGS.PNG" alt="" /></span></li>
+											<li>LBFGS at epoch 2 the loss function run time was 5min 13sec and gave an accuracy of  <strong>10%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>7. RMSprop</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_RMS.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_RMS.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_RMS.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_RMS.PNG" alt="" /></span></li>
+											<li>RMSprop at epoch 2 the loss function run time was 1min 50sec and gave an accuracy of  <strong>55%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>8. Rprop</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/optimiser_R.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_R.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_R.PNG" alt="" /></span></li>
+											<li></li><span class="image"><img src="images/cifar10/class_accuracy_R.PNG" alt="" /></span></li>
+											<li>Rprop at epoch 2 the loss function run time was 3min 29sec and gave an accuracy of  <strong>25%</strong></li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>Visual representation of accuracy and runtimes of all the optimizers</strong></li>
+                                            <li><span class="image"><img src="images/cifar10/bar_graph.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/line_graph.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/line_graph_runtime.PNG" alt="" /></span></li>
+											<li>Looking at the graphs for the optimizer run with 2 epoch the loss was not completely reduced therefore I increased the epoch value to 5 and then 10 which helped me in reducing the loss value and increasing the accuracy of the model.</li>
+											<li>After running all the optimizers we can see that <strong>SGD</strong> and <strong>RMSprop</strong> gave that highest accuracy so experimenting on those optimizers</li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+                                            <li><strong>Running further experiments on SGD and RMSprop</strong></li>
+											<li>Updating standard SGD code to 5 epoch </li>
+											<li><span class="image"><img src="images/cifar10/optimiser_sgd.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_imp_ep5.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_ep5.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/class_accuracy_ep5.PNG" alt="" /></span></li>
+											<li>This improved the accuracy to <strong>59%</strong> at 5 epoch</li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+											<li>Updating standard SGD code to 5 epoch and updating the layer values for fc1, fc2, fc3 to (16*5*5, 240), (240, 168), (168, 10) respectively</li>
+											<li><span class="image"><img src="images/cifar10/network_layer_ep5_240.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/optimiser_sgd.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_ep5_240.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/network_accuracy_ep5_240.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/class_accuracy_ep5_240.PNG" alt="" /></span></li>
+											<li>This improved the accuracy to <strong>60%</strong> at 5 epoch and updated fc layer values</li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+											<li>Updating standard SGD code to 5 epoch and updating the conv2d values to</li>
+											<ul>
+												<li>self.conv1 = nn.Conv2d(3,   64,  3)</li>
+												<li>self.conv2 = nn.Conv2d(64,  128, 3)</li>
+												<li>self.conv3 = nn.Conv2d(128, 256, 3)</li>
+												<li>Changing FC1 input value to (64 * 5 * 5)</li>
+											</ul>
+											<li><span class="image"><img src="images/cifar10/network_layer_73.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/optimiser_sgd.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/lossrun_73.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/netwrok_accuracy_73.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/cifar10/class_accuracy_73.PNG" alt="" /></span></li>
+											<li>This improved the accuracy to <strong>73%</strong> at 5 epoch and updated conv2d layer and fc layer values.</li>
+                                        </ul>
+
+										<ul style="list-style-type: none;">
+											<li><span class="image"><img src="images/cifar10/complete_accuracy.PNG" alt="" /></span></li>
+                                        </ul>
+
+										<ul style="list-style-type: none; font-size: 20px;">
+											<li><strong>Basic Algorithm</strong></li>
+											<li><span class="image"><img style="width: 95%;" src="images/cifar10/cnn.PNG" alt="" /></span></li>
+											<li>The input is given to the network layer that is the feature learning where Convolution+Relu which is the activiation function and pooling that is reducing the matrix size, takes place. We have 3 convolutional layers 1 pooling layer and 3 fully connected layers which is the classification layer which together is the network layer.
+
+												This network layer is passed on to the optimizer function where we try different optimizers to reduce the loss in training using more epoch values, using different optimizers and manipulating the layers in the feature learning.
+
+												once the model is trained with the data we use the test data to check the accuracy of the model more the accuracy more better is the model.
+											</li>
+                                        </ul>
+
+										<ul style="list-style-type: none; font-size: 20px;">
+											<li><strong>Contributions</strong></li>
+											<li>Apart from the data refered from the reference to further improve the model I increased the number of fully connected and convolutional layers which helped in pushing the model accuracy to 75% running the same code with adamax optimizer also gave me a 75% accuracy you can find the code for the same in my github link</li>
+                                        </ul>
+
+										<ul style="list-style-type: none; font-size: 20px;">
+											<li><strong>Challenges</strong></li>
+											<li>I faced a challenge in increasing the accuracy after 70% as both and epoch value and layers were increased which lead me to 70% but going above 70% was a challenge. Overcoming this was only possible with the help of reference which helped me to look at the code in a different manner helped me in reaching the 75% accuracy mark</li>
+                                        </ul>
+
+										<ul style="list-style-type: none; font-size: 20px;">
+											<li><strong>References</strong></li>
+											<li>https://www.stefanfiott.com/machine-learning/cifar-10-classifier-using-cnn-in-pytorch/</li>
+											<li>https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</li>
+											<li>https://www.cs.toronto.edu/~kriz/cifar.html#:~:text=The%20CIFAR%2D10%20dataset%20consists,batch%2C%20each%20with%2010000%20images.</li>
+											<li>https://blog.paperspace.com/pytorch-101-building-neural-networks/</li>
+											<li>https://www.youtube.com/watch?v=pDdP0TFzsoQ</li>
+											<li>https://bytepawn.com/solving-cifar-10-with-pytorch-and-skl.html</li>
+                                        </ul>
+										
+									</section>
+
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">	
+					<section>
+						<h2>Get in touch</h2>
+						<dl class="alt">
+							<dt>Address</dt>
+							<dd>404 E Border st &bull; Arlington, TX 76010 &bull; USA</dd>
+							<dt>Phone</dt>
+							<dd>(682) 347-3446</dd>
+							<dt>Email</dt>
+							<dd><a href="#">yashjana@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://twitter.com/Yashwanthkj" target="_blank" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/yaswanth-jk-4008bb162/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Yaswanth3277" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/yaswanthjk" target="_blank" class="icon brands fa-kaggle alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
