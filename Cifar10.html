@@ -20,6 +20,19 @@
 						<a href="https://github.com/Yaswanth3277/cifar10imageclassifier/blob/main/Image_Classifier.ipynb" target="_blank" class="button">Most accurate model</a>
 					</header>
 
+					<nav id="nav">
+						<ul>
+							<li><a href="#content" class="active">Best Accuracy</a></li>
+							<li><a href="#optimizers">Optimizer Experiments</a></li>
+							<li><a href="#graph">Graphs</a></li>
+							<li><a href="#SGD">Experiments on SGD</a></li>
+							<li><a href="#Algo">Basic Algorithm</a></li>
+							<li><a href="#contribution">Contributions</a></li>
+							<li><a href="#Challenges">Challenges</a></li>
+							<li><a href="#References">References</a></li>
+						</ul>
+					</nav>
+
 				<!-- Main -->
 					<div id="main">
 
@@ -80,7 +93,7 @@
                                             <li>Network accuracy obtained after making the above changes with SGD optimizer <strong>75%</strong></li>
                                         </ul>
 
-										<h3><strong>Experiments</strong></h3>
+										<h3 id="optimizers"><strong>Experiments</strong></h3>
 										<h4><strong>1. Trying different Optimizers</strong></h4>
 
                                         <ul style="list-style-type: none;">
@@ -155,7 +168,7 @@
 											<li>Rprop at epoch 2 the loss function run time was 3min 29sec and gave an accuracy of  <strong>25%</strong></li>
                                         </ul>
 
-										<ul style="list-style-type: none;">
+										<ul id="graph" style="list-style-type: none;">
                                             <li><strong>Visual representation of accuracy and runtimes of all the optimizers</strong></li>
                                             <li><span class="image"><img src="images/cifar10/bar_graph.PNG" alt="" /></span></li>
 											<li><span class="image"><img src="images/cifar10/line_graph.PNG" alt="" /></span></li>
@@ -164,7 +177,7 @@
 											<li>After running all the optimizers we can see that <strong>SGD</strong> and <strong>RMSprop</strong> gave that highest accuracy so experimenting on those optimizers</li>
                                         </ul>
 
-										<ul style="list-style-type: none;">
+										<ul id="SGD" style="list-style-type: none;">
                                             <li><strong>Running further experiments on SGD and RMSprop</strong></li>
 											<li>Updating standard SGD code to 5 epoch </li>
 											<li><span class="image"><img src="images/cifar10/optimiser_sgd.PNG" alt="" /></span></li>
@@ -204,7 +217,7 @@
 											<li><span class="image"><img src="images/cifar10/complete_accuracy.PNG" alt="" /></span></li>
                                         </ul>
 
-										<ul style="list-style-type: none; font-size: 20px;">
+										<ul id="Algo"style="list-style-type: none; font-size: 20px;">
 											<li><strong>Basic Algorithm</strong></li>
 											<li><span class="image"><img style="width: 95%;" src="images/cifar10/cnn.PNG" alt="" /></span></li>
 											<li>The input is given to the network layer that is the feature learning where Convolution+Relu which is the activiation function and pooling that is reducing the matrix size, takes place. We have 3 convolutional layers 1 pooling layer and 3 fully connected layers which is the classification layer which together is the network layer.
@@ -215,17 +228,17 @@
 											</li>
                                         </ul>
 
-										<ul style="list-style-type: none; font-size: 20px;">
+										<ul id="contribution" style="list-style-type: none; font-size: 20px;">
 											<li><strong>Contributions</strong></li>
 											<li>Apart from the data refered from the reference to further improve the model I increased the number of fully connected and convolutional layers which helped in pushing the model accuracy to 75% running the same code with adamax optimizer also gave me a 75% accuracy you can find the code for the same in my github link</li>
                                         </ul>
 
-										<ul style="list-style-type: none; font-size: 20px;">
+										<ul id="Challenges" style="list-style-type: none; font-size: 20px;">
 											<li><strong>Challenges</strong></li>
 											<li>I faced a challenge in increasing the accuracy after 70% as both and epoch value and layers were increased which lead me to 70% but going above 70% was a challenge. Overcoming this was only possible with the help of reference which helped me to look at the code in a different manner helped me in reaching the 75% accuracy mark</li>
                                         </ul>
 
-										<ul style="list-style-type: none; font-size: 20px;">
+										<ul id="References" style="list-style-type: none; font-size: 20px;">
 											<li><strong>References</strong></li>
 											<li>https://www.stefanfiott.com/machine-learning/cifar-10-classifier-using-cnn-in-pytorch/</li>
 											<li>https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</li>
