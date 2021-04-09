@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="images/Y.png">
+		<title>Overfitting</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Overfitting using the Higher Order Linear Regression</h1>
+						<a href="https://github.com/Yaswanth3277/Linear_Regression/blob/main/Linear_Regression.ipynb" target="_blank" class="button">Python Notebook</a>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- Text -->
+									<section>
+										<h2><strong>Overfitting using the Higher Order Linear Regression</strong></h2>
+										<h4><a href="https://github.com/Yaswanth3277/Linear_Regression" target="_blank">Github</a></h4>
+                                        <h4><strong>Introduction</strong></h4>
+                                        <p>This blog explains the concept of overfitting using the Higher order linear regression.
+
+											First we fit the model with 10 data points and different degree values where the model is overfitted in degree 9 to overcome this we increase the data points to 100 we can see that the model is not overfitted and is accurate.
+										</p>
+										
+										<ul style="list-style-type: none;">
+                                            <li>a. Generate 20 data pairs (X, Y) using y = sin(2*pi*X) + 0.1 * N .</li>
+											<li>
+												<ul style="list-style-type: none;">
+													<li>i. Use uniform distribution between 0 and 1 for X.</li>
+													<li><span class="image"><img src="images/Linear/Import.PNG" alt="" /></span></li>
+													<li><span class="image"><img src="images/Linear/x values.PNG" alt="" /></span></li>
+													<li><span class="image"><img src="images/Linear/y and graph.PNG" alt="" /></span></li>
+													<li>ii.Sample N from the normal gaussian distribution.</li>
+													<li><span class="image"><img src="images/Linear/N values.PNG" alt="" /></span></li>
+													<li>iii. Use 10 for train and 10 for test.</li>
+													<li><span class="image"><img src="images/Linear/test_train_split.PNG" alt="" /></span></li>
+													<li><span class="image"><img src="images/Linear/x_and_y_plot.PNG" alt="" /></span></li>
+												</ul>
+											</li>
+                                            <li>b. Using root mean square error, find weights of polynomial regression for order is 0, 1, 3, 9 and Draw a chart of fit data.</li>
+											<ul style="list-style-type: none;">
+												<li>i. Polynomial Regression for Order 0</li>
+												<li><span class="image"><img src="images/Linear/degree0.PNG" alt="" /></span></li>
+												<li>ii.Polynomial Regression for Order 1.</li>
+												<li><span class="image"><img src="images/Linear/degree1.PNG" alt="" /></span></li>
+												<li>iii. Polynomial Regression for Order 3.</li>
+												<li><span class="image"><img src="images/Linear/degree3.PNG" alt="" /></span></li>
+												<li>iv. Polynomial Regression for Order 9. We can see that the model is overfitted</li>
+												<li><span class="image"><img src="images/Linear/degree9.PNG" alt="" /></span></li>
+												<li>From this graph we can understand that the data is overfitted.As the graph is too accurate.</li>
+											</ul>
+                                            <li>c. Display weights in table .</li>
+                                            <li><span class="image"><img src="images/Linear/weights.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Linear/display_weights.PNG" alt="" /></span></li>
+                                            <li>d. Draw train error vs test error</li>
+											<ul style="list-style-type: none;">
+												<li>i. Train Error.</li>
+												<li><span class="image"><img src="images/Linear/train_error.PNG" alt="" /></span></li>
+												<li>ii. Test Error.</li>
+												<li><span class="image"><img src="images/Linear/test_error.PNG" alt="" /></span></li>
+												<li>iii. Train error and Test error data.</li>
+												<li><span class="image"><img src="images/Linear/train_and_test.PNG" alt="" /></span></li>
+												<li>iv. Train error vs Test error plot.</li>
+												<li><span class="image"><img src="images/Linear/trainvstest.PNG" alt="" /></span></li>
+												
+
+											</ul>
+                                            <li>e. Now generate 100 more data and fit 9th order model and draw fit</li>
+                                            <li><span class="image"><img src="images/Linear/100-1.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Linear/100-2.PNG" alt="" /></span></li>
+                                            <li>Fiiting the 9th order Model for the model with 100 data points</li>
+                                            <li><span class="image"><img src="images/Linear/degree9-100.PNG" alt="" /></span></li>
+											<li>Here we can see that after increasing the data points there is no overfitting observered in the graph.</li>
+                                            <li>f. Now we will regularize using the sum of weights.</li>
+                                            <li><span class="image"><img src="images/linear/Regularize.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/linear/100-error.PNG" alt="" /></span></li>
+                                            <li>g. Draw chart for lambda is 1, 1/10, 1/100, 1/1000, 1/10000, 1/100000 </li><br>
+											<ul style="list-style-type: none;">
+												<li>i. Lambda is 1.</li>
+												<li><span class="image"><img src="images/Linear/lambda-1.PNG" alt="" /></span></li>
+												<li>ii. Lambda is 1/10.</li>
+												<li><span class="image"><img src="images/Linear/lambda-0.1.PNG" alt="" /></span></li>
+												<li>iii. Lambda is 1/100.</li>
+												<li><span class="image"><img src="images/Linear/lambda-0.01.PNG" alt="" /></span></li>
+												<li>iv. Lambda is 1/1000.</li>
+												<li><span class="image"><img src="images/Linear/lamdba-0.001.PNG" alt="" /></span></li>
+												<li>v. Lambda is 1/10000.</li>
+												<li><span class="image"><img src="images/Linear/lambda-0.0001.PNG" alt="" /></span></li>
+												<li>vi. Lambda is 1/10000.</li>
+												<li><span class="image"><img src="images/Linear/lambda-0.00001.PNG" alt="" /></span></li>
+											</ul>
+                                            <li>h. Now draw test and train error according to lamda .</li>
+                                            <li><span class="image"><img src="images/Linear/train_test_100.PNG" alt="" /></span></li>
+											
+											<li>i. Best Model based on the test Performance.</li>
+                                            <li><span class="image"><img src="images/Linear/best_model.PNG" alt="" /></span></li>
+
+										<ul id="Algo"style="list-style-type: none; font-size: 20px;">
+											<li><strong>Overfitting and Underfitting</strong></li>
+											<li><span class="image"><img style="width: 95%;" src="images/Linear/degree0-pic.png" alt="" /></span></li>
+											<li><span class="image"><img style="width: 95%;" src="images/Linear/degree9-pic.png" alt="" /></span></li>
+											<li>Overfitting occurs when a model is trained using a limited set of data points and is closely fit. 
+
+												Overfitting generally happens when the model is too complex, It has a small training error but a very large test error.
+
+												We can see from the above image, the image with degree 9 is overfitted.</li><br>
+
+											<li>Underfitting occurs when the model is too simple but both training and test error are large.
+
+												We can see from the above image, the image with degree 0 is underfitted.
+											</li>
+                                        </ul>
+
+										<ul id="Graphs" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Graphs</strong></li>
+											<li>We can see from the above graphs if the data was overfitted or not when we see the first order 9 graph we see that the model is too accurate that is it is overfitted whereas the degree 9 graph after increasing the data points to 120 the graph is normal and not overfitted this way the graphs helped us in determining overfitting in tha above assignment.</li>
+                                        </ul>
+
+										<ul id="contribution" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Contributions</strong></li>
+											<li>Apart from the data referred from the reference I have updated the graphs to properly fit the data and also trained the data to get a more accurate value from it.</li>
+                                        </ul>
+
+										<ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Challenges</strong></li>
+											<li>I faced a challenge in getting the proper Train vs Test graph, I was not getting the graph as expected it was a challenge for me to get it right and also as few of the concepts were new to me it was very difficult at the start and had a lot of learning to do and also the references helped me a lot.</li>
+                                        </ul>
+
+										<ul id="References" style="list-style-type: none; font-size: 20px;">
+											<li><strong>References</strong></li>
+											<li>https://mintu07ruet.github.io/files/Miah%2001.html</li>
+											<li>https://stackoverflow.com/questions/51906274/cannot-understand-with-sklearns-polynomialfeatures</li>
+											<li>https://stackoverflow.com/questions/56746207/what-does-the-coef-values-in-linearregression-stand-for</li>
+											<li>https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html</li>
+											<li>https://datascience.stackexchange.com/questions/80868/overfitting-in-linear-regression</li>
+                                        </ul>
+										
+									</section>
+
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">	
+					<section>
+						<h2>Get in touch</h2>
+						<dl class="alt">
+							<dt>Address</dt>
+							<dd>404 E Border st &bull; Arlington, TX 76010 &bull; USA</dd>
+							<dt>Phone</dt>
+							<dd>(682) 347-3446</dd>
+							<dt>Email</dt>
+							<dd><a href="#">yashjana@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://twitter.com/Yashwanthkj" target="_blank" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/yaswanth-jk-4008bb162/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Yaswanth3277" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/yaswanthjk" target="_blank" class="icon brands fa-kaggle alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
