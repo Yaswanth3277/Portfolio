@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="images/Y.png">
+		<title>Naive Bayes Classifier</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Naive Bayes Classifier</h1>
+						<a href="https://github.com/Yaswanth3277/naive_bayes_classifier/blob/main/sentiment-analysis.ipynb" target="_blank" class="button">Python Notebook</a>
+                        <a href="https://www.kaggle.com/yaswanthjk/sentiment-analysis" target="_blank" class="button">Kaggle</a>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- Text -->
+									<section>
+										<h2><strong>Naive Bayes Classifier</strong></h2>
+										<h4><a href="https://github.com/Yaswanth3277/naive_bayes_classifier" target="_blank">Github</a></h4>
+                                        <h4><strong>Introduction</strong></h4>
+                                        <p>Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of conditional independence between every pair of features given the value of the class variable.
+										</p>
+										
+										<ul style="list-style-type: none;">
+                                            <li>1. Imports.</li>
+											<li>
+												<ul style="list-style-type: none;">
+													<li><span class="image"><img src="images/Naive_bayes/import.PNG" alt="" /></span></li>
+												</ul>
+											</li>
+                                            <li>2. Reading Datasets Amazon, Yelp, Kaggle.</li>
+											<ul style="list-style-type: none;">
+												<li><span class="image"><img src="images/Naive_bayes/all3files.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/imdb_df.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/amazon_df.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/yelp_df.PNG" alt="" /></span></li>
+											</ul>
+                                            <li>3. Cleaning the dataset.</li>
+                                                <ul style="list-style-type: none;">
+                                                <li><span class="image"><img src="images/Naive_bayes/clean_dataset.PNG" alt="" /></span></li>
+											    <li><span class="image"><img src="images/Naive_bayes/reset index.PNG" alt="" /></span></li>
+                                            </ul>
+                                            <li>4. Positive sentiments vs Negative sentiments graph.</li>
+											<ul style="list-style-type: none;">
+												<li><span class="image"><img src="images/Naive_bayes/graph.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/data_check.PNG" alt="" /></span></li>
+											</ul>
+                                            <li>5. Split data into train, test and dev.</li>
+                                            <ul style="list-style-type: none;">
+                                                <li><span class="image"><img src="images/Naive_bayes/train_test_dev.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/train.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/test.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/dev.PNG" alt="" /></span></li>
+                                                <li><span class="image"><img src="images/Naive_bayes/word_cloud.PNG" alt="" /></span></li>
+                                            </ul>
+
+                                            <li>6. Build Vocabulary</li>
+                                            <ul style="list-style-type: none;">
+                                                <li><span class="image"><img src="images/Naive_bayes/vocab.PNG" alt="" /></span></li>
+                                            </ul>
+
+                                            <li>7. Probability of the occurrence of the words.</li><br>
+											<ul style="list-style-type: none;">
+												<li><span class="image"><img src="images/Naive_bayes/occurance_of_word.PNG" alt="" /></span></li>
+											</ul>
+
+                                            <li>8. Calculate accuracy using dev dataset.</li>
+                                            <ul style="list-style-type: none;">
+                                            <li><span class="image"><img src="images/Naive_bayes/dev_dataset.PNG" alt="" /></span></li>
+                                            </ul>
+
+                                            <li>9. Conduct five fold cross validation.</li>
+                                            <ul style="list-style-type: none;">
+                                            <li><span class="image"><img src="images/Naive_bayes/cv1.PNG" alt="" /></span></li>
+                                            <li><span class="image"><img src="images/Naive_bayes/cv2.PNG" alt="" /></span></li>
+                                            <li><span class="image"><img src="images/Naive_bayes/cv3.PNG" alt="" /></span></li>
+                                            </ul>
+
+                                            <li>10. Compare the effect of Smoothing.</li>
+                                            <ul style="list-style-type: none;">
+                                            <li><span class="image"><img src="images/Naive_bayes/smoothing1.PNG" alt="" /></span></li>
+                                            <li><span class="image"><img src="images/Naive_bayes/smoothing2.PNG" alt="" /></span></li>
+                                            <li><span class="image"><img src="images/Naive_bayes/smoothing3.PNG" alt="" /></span></li>
+                                            </ul>
+
+                                            <li>11. Derive Top 10 words that predicts positive and negative class.</li>
+                                            <ul style="list-style-type: none;">
+                                            <li><span class="image"><img src="images/Naive_bayes/pos-neg.PNG" alt="" /></span></li>
+                                            </ul>
+
+                                            <li>12. Final Accuracy.</li>
+                                            <ul style="list-style-type: none;">
+                                            <li><span class="image"><img src="images/Naive_bayes/final_accuracy.PNG" alt="" /></span></li>
+                                            </ul>
+                                            <li>I could achieve an accuracy of <strong>73.81%</strong></li>
+                                         </ul>   
+										<ul id="Graphs" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Graphs</strong></li>
+											<li>We can see from the above graphs that the positive and negative reviews are almost the same.</li>
+                                        </ul>
+
+                                        </ul>
+
+										<ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Challenges</strong></li>
+											<li>I faced a challenges in computing the probability values and accuracies which I could overcome with the help of a few references.</li>
+                                        </ul>
+
+										<ul id="References" style="list-style-type: none; font-size: 20px;">
+											<li><strong>References</strong></li>
+                                            <li>https://www.karanr.dev/blog/2020/naive_bayes_large_movie_reviews/naive_bayes_large_movie_reviews/</li>
+											<li>https://cs230.stanford.edu/blog/split/</li>
+											<li>https://levelup.gitconnected.com/movie-review-sentiment-analysis-with-naive-bayes-machine-learning-from-scratch-part-v-7bb869391bab</li>
+                                            <li>https://satyam-kumar.medium.com/imdb-movie-review-polarity-using-naive-bayes-classifier-9f92c13efa2d</li>
+                                            <li>https://scikit-learn.org/stable/modules/naive_bayes.html</li>
+                                        </ul>
+										
+									</section>
+
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">	
+					<section>
+						<h2>Get in touch</h2>
+						<dl class="alt">
+							<dt>Address</dt>
+							<dd>404 E Border st &bull; Arlington, TX 76010 &bull; USA</dd>
+							<dt>Phone</dt>
+							<dd>(682) 347-3446</dd>
+							<dt>Email</dt>
+							<dd><a href="#">yashjana@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://twitter.com/Yashwanthkj" target="_blank" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/yaswanth-jk-4008bb162/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Yaswanth3277" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/yaswanthjk" target="_blank" class="icon brands fa-kaggle alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
