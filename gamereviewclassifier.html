@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="images/Y.png">
+		<title>Game Review Classifier</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Game Review Classifier</h1>
+						<a href="https://github.com/Yaswanth3277/csgodataclassifier/blob/main/SteamReviewClassifier.ipynb" target="_blank" class="button">Python Notebook</a>
+                        <a href="https://www.kaggle.com/yaswanthjk/game-review-classifier" target="_blank" class="button">Kaggle</a>
+                        <a href="https://www.youtube.com/watch?v=_pR3GfzZcwo" target="_blank" class="button">Youtube</a>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- Text -->
+									<section>
+										<h2><strong>Game Review Classifier</strong></h2>
+										<h4><a href="https://github.com/Yaswanth3277/csgodataclassifier" target="_blank">Github</a></h4>
+                                        <h4><strong>Introduction</strong></h4>
+                                        <p>Data mining is a process of finding patters and correlations in large datasets to predict the outcomes using wide range of techniques like machine learning, statistics and databases.</p>
+                                        <p>The goal of this project is - Given a Game review predict if its a Positive or Negative review.</p>
+                                        <ul style="list-style-type: none; text-align: center;">
+                                            <ul style="list-style-type: none;">
+                                                <li><span class="image" style="text-align: center;"><img src="images/termproject/process.jpg" alt="" /></span></li>
+                                            </ul>
+                                        </ul>
+                                        <p>The dataset used is a Steam Game Review <a style="color:blue" href=https://www.kaggle.com/luthfim/steam-reviews-dataset>Dataset</a>. As we see the gaming community is growing really fast and during this pandemic the steam had its highest usage hit. As I am one of the contributor in its usage I decided to take this dataset.</p>
+                                        <p>This dataset has a lot of scope for future developments as there are lots of games linked to it. If we consider 1 particular game and take the games data it would allow us to explore a larger dataset and also build models that can predict the way players play and also the outcome of the games based on the data extracted from the game</p>
+										<p>The Game Review Dataset has the Reviews, Recommendations which helped me in training the model and build the classifier</p>
+                                        <p>The process followed is Data Preprocessing --> Data Visualization --> Data Cleaning --> Building Classification Model</p>
+                                        <p>In the preprocessing step we checked for the null and duplicate values which could have affected our classifier and deleted all those rows. In the visualization step we were able to look at the data in different perspectives which helped me in understanding the data better. In the data cleaning step I converted all the reviews in the datasets into lower case and also removed all the special characters from it as they would affect the model and also assigned integer to the recommendation column so it would make it easier to move further.</p>
+                                        <p>The reviews posted are text data we have to convert them into TFIDF form</p>
+                                        <p> tf-idf(t, d) = tf(t, d) * idf(t),</p>
+                                        <P>and the idf is computed as</P>
+                                        <p>idf(d, t) = log [ (1 + n) / (1 + df(d, t)) ] + 1 </p>
+                                        <p><strong>Model Building</strong></p>
+                                        <p>I have used Multinomial Navie Bayes, Support Vector Machine, Random Forest Classsifier as these are text classifiers</p>
+                                        <p>Out of these SVM gave me the best accuracy.</p>
+                                        <p><strong>Why?</strong></p>
+                                        <p>As mentioned above steam has a lot of scope and this review classifier can help me in further building the game recommender. As steam has millions of user who are trying out new games everyday people will be looking for recommendations so this app can help them select the right game. This classifer acts as the starting point of the recommender which can further be developed into complete working application</p>
+										<embed src="images/termproject/SteamReviewClassifier.html" width="1200px" height="2100px" />
+
+                                        <ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Similar Applications</strong></li>
+											<li>https://store.steampowered.com/recommender/76561198204009015</li>
+                                            <li>https://apps.quanticfoundry.com/recommendations/gamerprofile/videogame/</li>
+                                            <li>https://tastedive.com/games</li>
+                                        </ul>
+
+                                        <ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+                                            <li><strong>GUI Screenshots</strong></li>
+											<li><span class="image" style="text-align: center;"><img src="images/termproject/gui1.PNG" alt="" /></span></li>
+                                            <li><span class="image" style="text-align: center;"><img src="images/termproject/gui2.PNG" alt="" /></span></li>
+                                            <li><span class="image" style="text-align: center;"><img src="images/termproject/gui3.PNG" alt="" /></span></li>
+                                        </ul>
+
+										<ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Challenges</strong></li>
+											<li>Analyzing and visualizing huge amount of data(data in 400k approx) was a difficult task and also getting a good accuracy was also a challenge for me I was able to push it to 85% at last. I was able to over come these challenges with the help of the references and also by trying out hyper parameters to the model.</li>
+                                        </ul>
+
+                                        <ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Contribution</strong></li>
+											<li>Apart from the references I tried to combine 2 models to form a ensemble but the accuracy didnot improve much it was similar to what SVM gave me and also visualized data using different graphs and approches to understand data better.</li>
+                                        </ul>
+
+                                        <ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Experiments and findings</strong></li>
+											<li>I tried to implement this using 3 trypes of models that is Multinomial Naive Bayes, Support Vector Machine, Random Forest Classifier. Where SVM gave me the best accuracy out of all those and I also tried combining 2 model this also gave me an accuracy similar to what SVM gave me. Data Visualization and graphs helped in refining and fine tuning the data better.</li>
+                                            <li>I even tried different hyper parameter tuning by trying different C values for SVM and different alpha value for Naive Bayes were some of them improved my accuracy and some of them decreased it.</li>
+                                            <li>While doing hyper parameter training the SVM accuracy for c=100 and c=1000 we can see that the accuracy values are almost the same by which we can say that the data is overfitted when we give c=1000.</li>
+                                        </ul>
+
+                                        <ul id="Challenges" style="list-style-type: none; font-size: 20px;">
+											<li><strong>Basic Algorithm</strong></li>
+											<li>Classifiers used.</li>
+                                            <li>1. Multinomial Naive Bayes</li>
+                                            <li>2. Support Vector Machine</li>
+                                            <li>3. Random Forest Classifier</li><br>
+                                            <li><strong>Multinomial Naive Bayes</strong> is based on bayes theorem that works in text prediction and analysis. It works on the following formula <strong>P(A|B) = P(A) * P(B|A)/P(B)</strong></li>
+                                            <li><strong>(B)</strong> = prior probability of B.
+
+                                                <strong>P(A)</strong> = prior probability of class A.
+                                                
+                                                <strong>P(B|A)</strong> = occurrence of predictor B given class A probability.
+                                                
+                                                This formula helps in calculating the probability of the tags in the text.</li><br>
+                                            <li><strong>Support Vector Machine</strong> is a supervised learning model that analyses data for classification and regression. Here we seperate the data by selecting the best possible hyper plane out of all the possible ones</li><br>
+                                            <li><strong>Random Forest Classifier</strong> is an ensemble learning method for classification, regression that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting</li>
+                                        </ul>
+
+										<ul id="References" style="list-style-type: none; font-size: 20px;">
+											<li><strong>References</strong></li>
+                                            <li>https://www.kaggle.com/luthfim/steam-reviews-dataset</li>
+											<li>https://www.kaggle.com/bugonort/steam-reviews-classifier-with-bert</li>
+											<li>https://www.kaggle.com/ravehorn/cs-go-navi-win-loss-predicting</li>
+                                            <li>https://github.com/AlbertNightwind/Steam-recommendation-system/blob/master/RecommendationSystem_Part2.ipynb</li>
+                                            <li>https://github.com/AlbertNightwind/Steam-recommendation-system</li>
+                                            <li>https://medium.com/@vasista/sentiment-analysis-using-svm-338d418e3ff1</li>
+                                            <li>https://satyam-kumar.medium.com/imdb-movie-review-polarity-using-naive-bayes-classifier-9f92c13efa2d</li>
+                                            <li>https://www.geeksforgeeks.org/applying-multinomial-naive-bayes-to-nlp-problems/</li>
+                                            <li>https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html</li>
+                                            <li>https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html</li>
+                                        </ul>
+										
+									</section>
+
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">	
+					<section>
+						<h2>Get in touch</h2>
+						<dl class="alt">
+							<dt>Address</dt>
+							<dd>404 E Border st &bull; Arlington, TX 76010 &bull; USA</dd>
+							<dt>Phone</dt>
+							<dd>(682) 347-3446</dd>
+							<dt>Email</dt>
+							<dd><a href="#">yashjana@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://twitter.com/Yashwanthkj" target="_blank" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/yaswanth-jk-4008bb162/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Yaswanth3277" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/yaswanthjk" target="_blank" class="icon brands fa-kaggle alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
