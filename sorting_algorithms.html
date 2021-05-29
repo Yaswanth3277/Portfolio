@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="images/Y.png">
+		<title>Sorting Algorithms</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Sorting Algorithms</h1>
+						<a href="https://github.com/Yaswanth3277/SortingAlgorithms" target="_blank" class="button">Github</a>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- Text -->
+									<section>
+										<h2><strong>Sorting Algorithms</strong></h2>
+										<h4><a href="https://github.com/Yaswanth3277/SortingAlgorithms" target="_blank">Github</a></h4>
+                                        <h4><strong>Introduction</strong></h4>
+                                        <p>In this blog we run few sorting algorithms, visualize there working and compare runtimes.</p>
+										<p>A Sorting Algorithms is used to rearrage a given array of elements in ascending or descending order.</p>
+										<ul style="list-style-type: none;">
+											<li>Sorting Algorithms</li>
+											<ul>
+												<li>Bubble Sort.</li>
+												<li>Insertion Sort.</li>
+												<li>Selection Sort.</li>
+												<li>Quick Sort(Regular and 3 median)</li>
+												<li>Merge Sort</li>
+												<li>Heap Sort</li>
+											</ul>
+											<li><strong>1. Bubble Sort</strong></li>
+											<li>The Bubble Sort name comes from its working it compares the adjacent elements and then swaps them if they are not in order. This is similar to the bubble in a bowl where the small bubbles move up and the bigger bubbles are down.</li><br>
+											<li>Here I have used a function called bubble_sort which takes the unsorted array as the input and compares the adjacent values to check if they are greater or smaller if the next value is smaller than the previous value then swap the values if not then move to the next element.</li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/bubble_sort.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/bubblesort.gif" alt="" /></span></li><br>
+											<li><strong>2. Insertion Sort</strong></li>
+											<li>The elements are picked from the array and placed in the correct position on the left half of the array, this is Insertion Sort.</li><br>
+											<li>Here I have used a function called insertion_sort which takes an unsorted array as the input and then it traverses through the array where the first element is already in the right position then it moves to the second element and check where the second element should be placed to the left of the array this is put under a for loop until all the elements are sorted.</li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/insertion_sort.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/insertionsort.gif" alt="" /></span></li><br>
+											<li><strong>3. Selection Sort </strong></li>
+											<li>Selection sort is an in-place algorithm that traverses through the array and places the smallest element in the array to the beginning of the list.</li><br>
+											<li>Here I have used a function called selection_sort which takes the unsorted array as the input and consider the first element as the min then it search for the smallest value in the array and then it swaps the smallest element with the min. Then the pointer is moved to the next element. Here the elements left to the pointer are all sorted and to the right are the unsorted once. This is put under a for loop until all the elements are sorted.</li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/selection_sort.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/selectionsort.gif" alt="" /></span></li><br>
+											<li><strong>4. Merge Sort</strong></li>
+											<li>Merge sort uses divide and conquer technique where it splits the array elements into sub array until there is only single elements and then it merges the split arrays which gives you a sorted array.</li><br>
+											<li>Here we use 2 functions merge_sort, merge where merge_sort function takes the unsorted array as the input and the merge function takes the left part and right part of the split array and sorts them and merges them together. This uses a divide and conquer technique and recursion is also used to split the array further into single elements and then it is sorted and merged together.<br></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/merge_sort1.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/merge_sort2.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/mergesort.PNG" alt="" /></span></li><br>
+											<li><strong>5. Quick Sort</strong></li>
+											<li>This algorithm also uses divide and conquer technique. Unlike merge sort which divides the array into 2 equal halves it splits the array based on the pivot element which decreases its runtime significantly.</li><br>
+											<li>Quick sort uses 2 functions quick_sort which takes unsorted array and low, high index as the parameters the second function is partition which also takes unsorted array, low and high index as the input parameter. Quick sort function is called recursively to split the array based on the partition here we have taken last value of the array as pivot.
+												The elements smaller to the pivot are placed in the left sub array and the elements greater are placed in the right subarray and then the pivot is place at the center of the array. This is done recursively until the array is completely sorted.</li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/quick_sort.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/quicksort.PNG" alt="" /></span></li><br>
+											<li><strong>6. 3 Median Quick Sort</strong></li>
+											<li>Quick sort has the worst runtime complexity when we take the starting or last element as the pivot of the array. So to make it more effective we use the median of the array to get a better runtime complexity.</li><br>
+											<li>Here we first select the median as first element last element and middle element then we sort them in ascending the order and chose the middle element as a pivot this way we can select the best element to perform the quick sort which gives a better output compared to considering the extreme elements.</li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/3mid_quick_sort1.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/3mid_quick_sort2.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/3midquicksort.PNG" alt="" /></span></li><br>
+											<li><strong>7. Heap Sort</strong></li>
+											<li>In this algorithm we build a max heap with the given values and then we take the root element and place those values in the array in reverse order.</li><br>
+											<li>We use 2 functions here heap_sort and heapify. heapify is used to form the max heap from the given input array and then we recursively call the heapify and take the highest element and place them in the array in reverse order.</li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/heap_sort.PNG" alt="" /></span></li>
+											<li><span class="image"><img src="images/Sorting_Algorithms/heapsort.PNG" alt="" /></span></li><br>
+										</ul>
+										<ul style="list-style-type: none;">
+											<li><strong>Runtime Complexity</strong></li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/rtcomp.PNG" alt="" /></span></li><br>
+											<li><strong>Graphs</strong></li><br>
+											<li><span class="image"><img src="images/Sorting_Algorithms/randomgraph.PNG" alt="" /></span></li><br>
+										</ul>
+										<ul id="References" style="list-style-type: none; font-size: 20px;">
+											<li><strong>References</strong></li>
+                                            <li>https://www.geeksforgeeks.org/how-to-bind-multiple-commands-to-tkinter-button/</li>
+											<li>https://www.geeksforgeeks.org/sorting-algorithm-visualization-merge-sort/</li>
+											<li>https://docs.python.org/3/library/tkinter.html</li>
+                                            <li>https://www.tutorialspoint.com/python/python_gui_programming.htm</li>
+                                            <li>https://www.geeksforgeeks.org/heap-sort/https://github.com/AlbertNightwind/Steam-recommendation-system</li>
+                                        </ul>
+										
+									</section>
+
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">	
+					<section>
+						<h2>Get in touch</h2>
+						<dl class="alt">
+							<dt>Address</dt>
+							<dd>404 E Border st &bull; Arlington, TX 76010 &bull; USA</dd>
+							<dt>Phone</dt>
+							<dd>(682) 347-3446</dd>
+							<dt>Email</dt>
+							<dd><a href="#">yashjana@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://twitter.com/Yashwanthkj" target="_blank" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/yaswanth-jk-4008bb162/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Yaswanth3277" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.kaggle.com/yaswanthjk" target="_blank" class="icon brands fa-kaggle alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
